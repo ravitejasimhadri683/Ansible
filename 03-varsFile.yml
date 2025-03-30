@@ -3,7 +3,7 @@
   vars:
     URL: play.google.com   # playbook variable
   vars_files:
-    - "{{ env }}"-vars.yml
+    - "{{ env }}-vars.yml"
   tasks:
     - name: Printing variable from file
       ansible.builtin.debug:
