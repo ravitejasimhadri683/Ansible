@@ -12,10 +12,10 @@
       ansible.builtin.debug:
         msg: "Hello World!" 
 
-    - name: task2
-      ansible.builtin.shell: 
-      register: result
-      ignore_errors: yes  # Ignore errors for this task
-    - name: printing the output
-      ansible.builtin.debug:
-        msg: "The output is: {{ result }}" 
+    # - name: task2
+    #   ansible.builtin.shell: 
+    #   register: result
+    #   ignore_errors: yes  # Ignore errors for this task
+    # - name: printing the output
+    #   ansible.builtin.debug:
+    #     msg: "The output is: {{ result }}" 
