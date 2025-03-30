@@ -2,7 +2,7 @@
   hosts: all
   vars:
     my_var: "Hello, World!"
-    URL: playbook.google.com   # playbook variable
+    URL: play.google.com   # playbook variable
   tasks:
     - name: Display a variable
       ansible.builtin.debug:
@@ -10,8 +10,8 @@
     - name: Display a URL
       ansible.builtin.debug:
         msg: "The URL name is {{ URL }}"
-    - name: Printing a local variable
+    - name: Printing a URL in task level
       ansible.builtin.debug:
-        msg: "The value of local variable is:  {{ local_var }}"
+        msg: "The value of URL is:  {{ URL }}"
       vars:
-        local_var: "It is in task level"      #task level variable
+        URL: "task.google.com"      #task level variable
