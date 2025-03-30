@@ -1,6 +1,6 @@
--name: printing facts
+- name: printing facts
   hosts: all
   tasks:
-    - name: Display ansible_distribution
+    - name: printing OS Version
       ansible.builtin.debug:
-        msg: "The distribution is {{ ansible_distribution }}"
+        msg: "The OS version is: {{ ansible_distribution_version }}"
