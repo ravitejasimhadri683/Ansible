@@ -6,11 +6,11 @@
       register: result
     - name: printing the output
       ansible.builtin.debug:
-        msg: "The output is: {{ result }}"  
+        msg: "The output is: {{ result.result.stdout }}"  
 
-    # - name: task2
-    #   ansible.builtin.shell: df -h | grep /ravi
-    #   register: result
-    #   ignore_errors: yes
-    #   ansible.builtin.debug:
-    #     msg: "The output is: {{ result }}"
+    - name: task2
+      ansible.builtin.shell: df -h | grep /ravi
+      register: result
+    - name: printing the output
+      ansible.builtin.debug:
+        msg: "The output is: {{ result }}" 
