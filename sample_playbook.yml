@@ -7,4 +7,13 @@
     - name: task2
       ansible.builtin.debug:
         msg: "This is task2 in play1"
-    
+
+- name: play2
+  hosts: dev
+  tasks:
+    - name: task1
+      ansible.builtin.debug:
+        msg: "This is task1 in play2"
+    - name: task2
+      ansible.builtin.debug:
+        msg: "This is task2 in play2"    
