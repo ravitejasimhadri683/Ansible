@@ -2,6 +2,7 @@
   hosts: all
   vars:
     my_var: "Hello, World!"
+    vars_file: "dev-vars.yml"  # This is the file where the variable is defined
     URL: play.google.com   # playbook variable
   tasks:
     - name: Display a variable
@@ -15,3 +16,8 @@
         msg: "The value of URL is:  {{ URL }}"
       vars:
         URL: "task.google.com"      #task level variable
+
+    - name: Printing variables values from file
+      ansible.builtin.debug:
+        msg: "this is the value and fetched form the file. The envionment is {{ ENV }} and the group is {{ Group }} and the project is {{ Project }}"
+      
