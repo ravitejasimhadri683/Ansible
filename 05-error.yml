@@ -4,9 +4,9 @@
     - name: task1
       ansible.builtin.shell: df -h
       register: result
-      
+    - name: printing the output
       ansible.builtin.debug:
-        msg: "The output is: {{ result }}"
+        msg: "The output is: {{ result }}"  
 
     # - name: task2
     #   ansible.builtin.shell: df -h | grep /ravi
