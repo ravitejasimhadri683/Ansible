@@ -1,5 +1,7 @@
 - name: install nginx package   
   hosts: all
+  become: yes # become to root user
+  gather_facts: no  # if you want to skip the facts gathering, you can use this option
   tasks:
     - name: Install package
       ansible.builtin.package:
