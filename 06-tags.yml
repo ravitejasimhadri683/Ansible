@@ -1,0 +1,28 @@
+- name: Demo on tags, if you want skip to print frontend and db, you can use --skip-tags frontend,db and want to print only backend, you can use --tags backend then use tags in command line
+  hosts: all
+  tasks:
+    - name: install frontend
+      ansible.builtin.debug:
+        msg: "insatll frontend"
+      tags: frontend
+    - name: start frontend
+      ansible.builtin.debug:
+        msg: "start frontend"
+      tags: frontend
+    - name: install backend
+      ansible.builtin.debug:
+        msg: "insatll backend"
+      tags: frontend
+    - name: start frontend
+      ansible.builtin.debug:
+        msg: "start backend"
+      tags: frontend
+    - name: install db
+      ansible.builtin.debug:
+        msg: "insatll DB"
+      tags: frontend
+    - name: start DB
+      ansible.builtin.debug:
+        msg: "start DB"
+      tags: frontend
+     
