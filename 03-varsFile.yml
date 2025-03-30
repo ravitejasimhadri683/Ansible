@@ -7,6 +7,6 @@
   tasks:
     - name: Printing variable from file
       ansible.builtin.debug:
-        msg: "The value is fetched from the file. and the environment value is  {{ ENV }} and the group value is {{ Group }} and the project value is {{ Project }}"
+        msg: "The value is fetched from the file. and the environment value is:  {{ ENV }} and the group value is: {{ Group }} and the project value is: {{ Project }}"
         # Providing environment variable as input from command line     
          
