@@ -7,11 +7,6 @@
     - name: printing the output
       ansible.builtin.debug:
         msg: "The output is: {{ result.stdout }}"  
-
-    - name: print hello
-      ansible.builtin.debug:
-        msg: "Hello World!" 
-
     - name: task2
       ansible.builtin.shell: 
       register: result
@@ -19,3 +14,9 @@
     - name: printing the output
       ansible.builtin.debug:
         msg: "The output is: {{ result }}" 
+    
+    
+    - name: print hello
+      ansible.builtin.debug:
+        msg: "Hello World!" 
+
