@@ -8,8 +8,12 @@
       ansible.builtin.debug:
         msg: "The output is: {{ result.result.stdout }}"  
 
+    - name: print hello
+      ansible.builtin.debug:
+        msg: "Hello World!" 
+
     - name: task2
-      ansible.builtin.shell: df -h | grep /ravi
+      ansible.builtin.shell: 
       register: result
       ignore_errors: yes  # Ignore errors for this task
     - name: printing the output
