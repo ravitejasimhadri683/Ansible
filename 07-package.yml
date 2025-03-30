@@ -1,0 +1,11 @@
+- name: install nginx package   
+  hosts: all
+  tasks:
+    - name: Install package
+      ansible.builtin.package:
+        name: nginx
+        state: present
+      register: result
+    - name: print the result
+      ansible.builtin.debug:
+        msg: "The result is: {{ result }}"
