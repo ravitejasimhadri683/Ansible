@@ -1,0 +1,16 @@
+- name: Demo on Errors
+  hosts: all
+  tasks:
+    - name: task1
+      ansible.builtin.shell: df -h
+      register: result
+      
+      ansible.builtin.debug:
+        msg: "The output is: {{ result }}"
+
+    - name: task2
+      ansible.builtin.shell: df -h | grep /ravi
+      register: result
+      ignore_errors: yes
+      ansible.builtin.debug:
+        msg: "The output is: {{ result }}"
