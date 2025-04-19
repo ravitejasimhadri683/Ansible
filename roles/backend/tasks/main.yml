@@ -1,5 +1,5 @@
 - name: Configuring hostname
-  ansible.builtin.shell: set-hostname {{ component }}
+  ansible.builtin.shell: set-hostname {{ component }}-{{ env }}
 
 - name: Disabling the default nodejs verison
   ansible.builtin.shell: dnf module disable nodejs -y 
@@ -14,7 +14,7 @@
     name: "{{ appuser }}"
 
 - name: Copy a {{ component }} systemd file 
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: backend.service
     dest: /etc/systemd/system/backend.service
 
@@ -55,7 +55,7 @@
     name: all
     state: import
     target: /app/schema/backend.sql 
-    login_host: 172.31.0.57
+    login_host: 172.31.38.24
     login_user: root
     login_password: ExpenseApp@1
 
