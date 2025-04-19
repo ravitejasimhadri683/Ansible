@@ -1,0 +1,14 @@
+- name:  copy a file using copy module
+  hosts: all
+  become: yes # become to root user
+  gather_facts: no  # if you want to skip the facts gathering, you can use this option
+  tasks:
+    - name: copy a ngix file
+      ansible.builtin.copy:
+        src: nginx.conf
+        dest: /home/ec2-user/nginx.conf
+      register: result
+    - name: print the result
+      ansible.builtin.debug:
+        msg: "The result is: {{ result }}"
+ 
