@@ -55,7 +55,7 @@
     name: all
     state: import
     target: /app/schema/backend.sql 
-    login_host: 172.31.38.24
+    login_host: mysql-{{ env }}.cloud-apps-learn.site
     login_user: root
     login_password: ExpenseApp@1
 
